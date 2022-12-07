@@ -88,18 +88,19 @@ def output_names(
 
 def main():
     """Main function."""
-    begin_time = time.perf_counter()
     NAME = "Joseph Palombo"
     CSV_PATH = Path("data") / "periodic_table.csv"
 
     periodic_table = pd.read_csv(CSV_PATH)
     symbols = periodic_table["Symbol"].str.lower().tolist()
     symbol_map: Dict[str, str] = dict(zip(symbols, periodic_table["Element"]))
+
     possible_symbols = get_elements(name=NAME, symbols=symbols)
     output_names(name=NAME, possible_symbols=possible_symbols, symbol_map=symbol_map)
-    perform_time = time.perf_counter() - begin_time
-    print(f"Took {perform_time} seconds")
 
 
 if __name__ == "__main__":
+    begin_time = time.perf_counter()
     main()
+    perform_time = time.perf_counter() - begin_time
+    print(f"Took {perform_time} seconds")
