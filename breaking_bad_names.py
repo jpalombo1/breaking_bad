@@ -99,7 +99,7 @@ def main():
     print(possible_symbols)
     output_names(name=NAME, possible_symbols=possible_symbols, symbol_map=symbol_map)
     perform_time = time.perf_counter() - begin_time
-    print("Took", perform_time, "seconds")
+    print(f"Took {perform_time} seconds")
 
 
 if __name__ == "__main__":
