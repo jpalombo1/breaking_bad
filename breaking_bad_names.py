@@ -96,7 +96,6 @@ def main():
     symbols = periodic_table["Symbol"].str.lower().tolist()
     symbol_map: Dict[str, str] = dict(zip(symbols, periodic_table["Element"]))
     possible_symbols = get_elements(name=NAME, symbols=symbols)
-    print(possible_symbols)
     output_names(name=NAME, possible_symbols=possible_symbols, symbol_map=symbol_map)
     perform_time = time.perf_counter() - begin_time
     print(f"Took {perform_time} seconds")
